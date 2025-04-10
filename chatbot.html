@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials & Reviews</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h2 {
+            color: #407088;
+            margin-bottom: 10px;
+        }
+
+        /* Review Form */
+        .review-form {
+            background: #ffffff;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-form input, 
+        .review-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .star {
+            font-size: 25px;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .star:hover, 
+        .star.active {
+            color: gold;
+        }
+
+        .review-form button {
+            background: #407088;
+            color: white;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .review-form button:hover {
+            background: #305066;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #fff;
+            padding: 30px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .swiper-container {
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        .swiper-slide {
+            background: #ffb5b5;
+            color: #132743;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 18px;
+            box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .swiper-pagination {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Review Form -->
+    <section class="review-form">
+        <h2>Share Your Experience</h2>
+        <form id="reviewForm">
+            <input type="text" id="userName" placeholder="Your Name" required>
+            <textarea id="userReview" placeholder="Write your review..." required></textarea>
+            
+            <div class="stars">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+
+            <input type="hidden" id="userRating" value="0">
+            
+            <button type="submit">Submit Review</button>
+        </form>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper" id="reviewsContainer">
+                <!-- Default Testimonial -->
+                <div class="swiper-slide">
+                    <p>"This platform has changed the way I prepare for UPSC. Highly recommended!"</p>
+                    <h4>⭐⭐⭐⭐⭐ - Aayush Sharma</h4>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Swiper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let selectedRating = 0;
+
+            // Star rating selection
+            document.querySelectorAll(".star").forEach(star => {
+                star.addEventListener("click", function () {
+                    selectedRating = this.getAttribute("data-value");
+                    document.getElementById("userRating").value = selectedRating;
+
+                    document.querySelectorAll(".star").forEach(s => s.classList.remove("active"));
+                    for (let i = 0; i < selectedRating; i++) {
+                        document.querySelectorAll(".star")[i].classList.add("active");
+                    }
+                });
+            });
+
+            // Review Form Submission
+            document.getElementById("reviewForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                let name = document.getElementById("userName").value;
+                let review = document.getElementById("userReview").value;
+                let rating = document.getElementById("userRating").value;
+
+                if (rating == 0) {
+                    alert("Please select a rating!");
+                    return;
+                }
+
+                let newReview = { name, review, rating };
+
+                let storedReviews = JSON.parse(localStorage.getItem("userReviews")) || [];
+                storedReviews.push(newReview);
+                localStorage.setItem("userReviews", JSON.stringify(storedReviews));
+
+                displayReviews();
+                document.getElementById("reviewForm").reset();
+                document.querySelectorAll(".star").forEach(s => s.classList.remove("active"));
+                swiper.update();
+            });
+
+            function displayReviews() {
+                let reviewsContainer = document.getElementById("reviewsContainer");
+                reviewsContainer.innerHTML = "";
+
+                let storedReviews = JSON.parse(localStorage.getItem("userReviews")) || [];
+
+                storedReviews.forEach(({ name, review, rating }) => {
+                    let newReview = document.createElement("div");
+                    newReview.classList.add("swiper-slide");
+                    newReview.innerHTML = `<p>"${review}"</p><h4>${"⭐".repeat(rating)} - ${name}</h4>`;
+                    reviewsContainer.appendChild(newReview);
+                });
+
+                swiper.update();
+            }
+
+            var swiper = new Swiper(".swiper-container", {
+                loop: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 3000,
+                }
+            });
+
+            displayReviews();
+        });
+    </script>
+
+</body>
+</html>

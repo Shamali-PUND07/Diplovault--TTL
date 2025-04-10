@@ -1,0 +1,98 @@
+#chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-family: Arial, sans-serif;
+}
+
+#chat-icon {
+    background-color: #407088;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+}
+
+#chat-window {
+    display: none;
+    width: 250px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#chat-header {
+    background: #132743;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chat-body {
+    padding: 10px;
+}
+
+#user-input {
+    width: 80%;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #407088;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(to right, #8a0f0f, #ff4d4d);
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cta-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.cta-section p {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #fff;
+    color: #8a0f0f;
+    font-size: 1.3em;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background: #ffd1d1;
+    color: #8a0f0f;
+    transform: scale(1.1);
+}

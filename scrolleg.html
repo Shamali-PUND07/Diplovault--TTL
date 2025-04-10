@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Scroll Animation</title>
+    
+    <!-- AOS CSS for Scroll Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar .logo {
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .navbar .nav-links li {
+            margin: 0 15px;
+        }
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .navbar .nav-links a:hover {
+            color: #d42a4d;
+        }
+        .contact-btn {
+            background: #d42a4d;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+        }
+        .contact-btn:hover {
+            background: #b71e3b;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 85vh;
+            background: url('your-image-url.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            padding-left: 50px;
+            color: white;
+            padding-top: 80px;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 500px;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        /* About Section */
+        .about-section {
+            
+            padding: 80px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .about-content {
+            max-width: 50%;
+        }
+        .about-image {
+            max-width: 40%;
+        }
+
+        /* Section Spacing */
+        .section {
+            padding: 100px 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Your Logo</div>
+        <ul class="nav-links">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+        <a href="#" class="contact-btn">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section" data-aos="fade-down">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1 data-aos="zoom-in">About Us</h1>
+            <p data-aos="fade-up">We are a full-service creative platform designed to help learners like you. No roadblocks, just progress!</p>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="about-section">
+        <div class="about-content" data-aos="fade-right">
+            <h2>Who We Are</h2>
+            <p>We provide quality resources for learners and professionals to enhance their skills and knowledge. Our mission is to make education accessible, interactive, and enjoyable.</p>
+        </div>
+        <img class="about-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfSlxB9hTKejUICzgoi2uFMNZcwytk51UFLw&s" alt="About Us" data-aos="fade-left">
+    </div>
+
+    <!-- More Sections with Animations -->
+    <div class="section" data-aos="fade-up">
+        <h2>Our Vision</h2>
+        <p>Empowering people with knowledge to shape their future.</p>
+    </div>
+
+    
+
+    <!-- AOS Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000, // Animation speed in milliseconds
+            easing: "ease-in-out", // Animation style
+            once: false // Set true if animation should happen only once
+        });
+    </script>
+
+</body>
+</html>

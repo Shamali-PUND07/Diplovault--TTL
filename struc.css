@@ -1,0 +1,181 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   font-family: calibri;
+
+}
+
+body {
+    background-color: #bfcfff;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #081f37; /* Dark Blue */
+    padding: 15px 20px;
+    color:#ffc97c;
+}
+
+/* Logo */
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    font-family: Berlin Sans FB;
+    color: #f5b553;
+    padding-left: 20px;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {    font-family: 'Times New Roman';
+    text-decoration: none;
+    color: #ffd6a4;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffcbcb; /* Light Pink */
+}
+
+
+img{
+    height: 34px;
+    width: 34px;
+}
+/* end of nav bar styling */
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1, h2, h3 {
+    text-align: center;
+    font-weight: bold;
+}
+
+h1 {
+    color: #000;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: #ffd6a4;
+     background-color: #081f37 ;
+    font-family: calibri;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+h3 {
+    color: #8a0f0f;
+    margin-top: 20px;
+    font-family:  calibr;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #cadefc;
+
+}
+
+td{
+    font-size: 18px;
+}
+
+th {
+    background-color: #8a0f0f;
+    color: white;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #edf7fa;
+}
+
+/* Highlighted Table Sections */
+tr[style*="background-color: #ffcbcb;"],
+tr[style*="background-color: #ffb5b5;"],
+tr[style*="background-color: #132743;"] {
+    background-color: #8a0f0f !important;
+    color: wheat; !important;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Link Styling */
+a {
+    color: #8a0f0f;
+    text-decoration: none;
+    }
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: #081f37;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}

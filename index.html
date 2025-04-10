@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+    <!-- AOS CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+</head>
+<body>
+
+      <nav class="navbar">
+        <div class="logo">DIPLOVAULT</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li>  <div class="dropdown">
+                <p>Syllabus</p>
+                <div class="dropdown-content">
+                    <a href="struc.html">Exam Structure</a>
+                    <a href="mains.html">Mains Syllabus</a>
+                    <a href="prelims.html">Prelims Syllabus</a>
+                </div>
+            </div>
+            <li><a href="study_material.html">Study Material</a></li>
+            <li ><a href="#" style="background-color:#8a0f0f; padding:2px 3px 2px 3px;border-radius:5px;">Current Affairs </a></li>
+                            <li id="user"><a href="#"><img src="user.png"></a></li>
+        </ul>
+        </nav>
+    </br>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <p class="quote-text" id="quoteText">Loading...</p>
+                <p class="quote-author" id="quoteAuthor"></p>
+            </div>
+            <a href="#" class="banner-text" style="font-family: 'Times New Roman', Times, serif;text-decoration: none;"  >            <div class="slide banner-container">
+              <p >📰 Stay Updated with Subject-Wise Current Affairs!</p>
+            </br>
+                <div class="btn btn-one" >
+    <span>CLICK NOW!</span>
+  </div></a>
+
+            </div>
+            <div class="slide quote-container">
+                <p class="quote-text"> 🚀Start Your UPSC Journey Now!</p>
+            </div>
+            <div class="slide smile-container">
+                <p class="smile-text">✨ Ace UPSC with the Right Strategy! </p>
+            </div>
+        </div>
+        <button class="prev-btn" onclick="prevSlide()">&#10094;</button>
+        <button class="next-btn" onclick="nextSlide()">&#10095;</button>
+    </div>
+
+        
+        
+
+<div class="container">
+        <div class="box" id="b1"><a href="">Current Affairs</a></div>
+        <div class="box" id="b2"><a href="struc.html">UPSC Pattern</a></div>
+        <div class="box" id="b3"><a href="upsc_strategy.html">UPSC Strategy</a></div>
+        <div class="box" id="b4"><a href="study_material.html">Study Material</a></div>
+        <div class="box" id="b5"><a href="prebox.html">Prelims</a> </div>
+        <div class="box" id="b6"><a href="mainsbox.html">Mains</Main></a></div>
+    </div>
+
+
+<div class="space" style="height: 70px;"> </div>
+
+
+    <!-- About Section -->
+
+
+<div class="about-section" id="about">
+    <div class="about-content"  data-aos="fade-right">
+        <h2>About Us.</h2>
+        <p>Welcome to <strong>DIPLOVAULT</strong>, your ultimate UPSC preparation platform.</p>
+        <p>We provide structured study materials, subject-wise current affairs, and essential exam resources to make your learning easy and effective.</p>
+        <ul>
+            <li>Complete UPSC Syllabus & Exam Pattern</li>
+            <li>Subject-Wise Current Affairs</li>
+            <li>Previous Year Questions (PYQs)</li>
+            <li>Important Study Materials</li>
+        </ul>
+        <p>Stay informed, stay prepared! </p>
+    </div>
+    <img class="about-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPgCVURnp2FbgfGhlNgj4k5vCM2Xw-NJ9U8w&s" 
+    alt="About Us" data-aos="fade-left">
+</div>
+
+
+<div class="space" style="height: 10px;"> </div>
+
+<!-- Vision Section -->
+<div class="vision-section" id="vision"
+data-aos="fade-up">
+    <h2 id="h">Our Vision</h2>
+    <p> "To empower individuals with knowledge, foster innovation, and create a transformative learning environment that drives progress and positive change in society."
+</p>
+</div>
+         <div class="space" style="height: 190px;"> </div>
+
+         
+    
+
+  
+   
+
+
+    <main>
+        <p></p>
+    </main>
+
+    <footer>
+        <p></p>
+    </footer>
+  <!-- AOS Script -->
+
+
+    <script src="script.js"></script>
+  <!-- AOS JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 2000,  // Speed of animation
+        easing: 'ease-in-out', // Smooth easing effect
+        once: false,  // Repeat animation on scroll
+        mirror: true  // Animates while scrolling back
+    });
+</script>
+
+</script>
+</body>
+</html>
